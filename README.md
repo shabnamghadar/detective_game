@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Case of the Stolen Lavender Chunky Yarn 🧶🕵️‍♀️
 
-## Getting Started
+Welcome to the detective game!
 
-First, run the development server:
+## How to Play
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1.  **Objective:** Identify which suspect stole the yarn by eliminating the innocent ones.
+2.  **Suspects:**
+    *   **Sena** (Artist)
+    *   **Anlin** (Stealthy)
+    *   **Celine** (Cute)
+    *   **Alex** (Builder)
+    *   **Melody** (Fiber Master)
+    *   **Maleficent** (Fictional Villain)
+3.  **Clues:**
+    *   Clues are hidden in **QR Codes** or **Barcodes**.
+    *   You can scan **any** QR code (from a book, a product, or generated online) to get a clue.
+    *   Each *unique* code gives you a *new* clue about the culprit.
+    *   Example clues: "The thief is NOT fictional", "The thief has a 'Cute' trait".
+4.  **Winning:**
+    *   Use the clues to "Eliminate" suspects on the board.
+    *   When you think you know who it is, click **"Accuse!"**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
+2.  **Run the Game:**
+    ```bash
+    npm run dev
+    ```
+3.  **Open Browser:**
+    Go to `http://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes for Parents
+-   The game runs entirely in the browser.
+-   The camera feed is processed locally (no images are sent to a server).
+-   You can print QR codes or just grab household items with barcodes for the kids to scan.

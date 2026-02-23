@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detective Game - Printable Clues</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #333;
+        }
+        .header p {
+            color: #666;
+        }
+        .clues-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .clue-card {
+            background: white;
+            border: 2px dashed #ccc;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+        .clue-card img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+        .clue-number {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #4a5568;
+            margin-bottom: 5px;
+        }
+        .clue-location {
+            font-size: 0.9em;
+            color: #718096;
+            margin-top: 5px;
+            border-top: 1px solid #eee;
+            padding-top: 5px;
+        }
+        @media print {
+            body {
+                background: white;
+            }
+            .header, .no-print {
+                display: none;
+            }
+            .clue-card {
+                border: 1px solid #000;
+                margin: 10px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header no-print">
+        <h1>🔍 Detective Game Clues</h1>
+        <p>Print this page and cut out the clues. Hide them around the house!</p>
+        <button onclick="window.print()" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">Print Clues</button>
+    </div>
+
+    <div class="clues-container">
+        <!-- Clue 1 -->
+        <div class="clue-card">
+            <div class="clue-number">Clue #1</div>
+            <img src="clues/clue_1.png" alt="Clue 1">
+            <div class="clue-location">Location: __________________</div>
+        </div>
+        <!-- Clue 2 -->
+        <div class="clue-card">
+            <div class="clue-number">Clue #2</div>
+            <img src="clues/clue_2.png" alt="Clue 2">
+            <div class="clue-location">Location: __________________</div>
+        </div>
+        <!-- Clue 3 -->
+        <div class="clue-card">
+            <div class="clue-number">Clue #3</div>
+            <img src="clues/clue_3.png" alt="Clue 3">
+            <div class="clue-location">Location: __________________</div>
+        </div>
+        <!-- Clue 4 -->
+        <div class="clue-card">
+            <div class="clue-number">Clue #4</div>
+            <img src="clues/clue_4.png" alt="Clue 4">
+            <div class="clue-location">Location: __________________</div>
+        </div>
+        <!-- Clue 5 -->
+        <div class="clue-card">
+            <div class="clue-number">Clue #5</div>
+            <img src="clues/clue_5.png" alt="Clue 5">
+            <div class="clue-location">Location: __________________</div>
+        </div>
+        <!-- Clue 6 -->
+        <div class="clue-card">
+            <div class="clue-number">Clue #6</div>
+            <img src="clues/clue_6.png" alt="Clue 6">
+            <div class="clue-location">Location: __________________</div>
+        </div>
+        <!-- Clue 7 -->
+        <div class="clue-card">
+            <div class="clue-number">Clue #7</div>
+            <img src="clues/clue_7.png" alt="Clue 7">
+            <div class="clue-location">Location: __________________</div>
+        </div>
+        <!-- Clue 8 -->
+        <div class="clue-card">
+            <div class="clue-number">Clue #8</div>
+            <img src="clues/clue_8.png" alt="Clue 8">
+            <div class="clue-location">Location: __________________</div>
+        </div>
+        <!-- Clue 9 -->
+        <div class="clue-card">
+            <div class="clue-number">Clue #9</div>
+            <img src="clues/clue_9.png" alt="Clue 9">
+            <div class="clue-location">Location: __________________</div>
+        </div>
+        <!-- Clue 10 -->
+        <div class="clue-card">
+            <div class="clue-number">Clue #10</div>
+            <img src="clues/clue_10.png" alt="Clue 10">
+            <div class="clue-location">Location: __________________</div>
+        </div>
+    </div>
+</body>
+</html>
