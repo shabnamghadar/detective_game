@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Suspect } from '@/lib/game-data';
 import { cn } from '@/lib/utils';
 import { XCircle } from 'lucide-react';
+import { sounds } from '@/lib/sounds';
 
 interface SuspectCardProps {
   suspect: Suspect;
@@ -17,6 +18,17 @@ interface SuspectCardProps {
 export default function SuspectCard({ suspect, isEliminated, isGuilty, gameStatus, onToggleEliminate, onAccuse }: SuspectCardProps) {
   const showJail = gameStatus === 'won' && isGuilty;
   const [imgError, setImgError] = useState(false);
+
+  // Play stamp sound on state changes
+  useEffect(() => {
+    if (isEliminated || showJail) {
+      sounds?.playStamp();
+    }
+  }, [isEliminated, showJail]);
+
+  const handleToggle = () => {
+    onToggleEliminate(suspect.id);
+  };
 
   return (
     <div className="relative group mt-6 h-full">
@@ -50,11 +62,11 @@ export default function SuspectCard({ suspect, isEliminated, isGuilty, gameStatu
         {/* Jail Bars Overlay */}
         <div 
           className={cn(
-              "absolute inset-0 z-30 flex flex-col justify-between pointer-events-none transition-transform duration-500 ease-out rounded-xl overflow-hidden",
+              "absolute inset-0 z-30 flex flex-col justify-between pointer-events-none transition-transform duration-500 ease-out rounded-xl overflow-hidden backdrop-blur-[2px]",
               showJail ? "translate-y-0" : "-translate-y-full"
           )}
         >
-            <div className="w-full h-full border-x-[12px] border-y-[12px] border-gray-900 absolute inset-0 rounded-xl bg-black/20"></div>
+            <div className="w-full h-full border-x-[12px] border-y-[12px] border-gray-900 absolute inset-0 rounded-xl bg-black/30 backdrop-blur-sm"></div>
             <div className="flex justify-evenly h-full absolute inset-0">
                {[...Array(5)].map((_, i) => (
                  <div key={i} className="w-6 h-full bg-gray-800 shadow-2xl border-l border-gray-600"></div>
@@ -132,7 +144,7 @@ export default function SuspectCard({ suspect, isEliminated, isGuilty, gameStatu
         <div className="mt-4 flex gap-2 z-20">
           {gameStatus === 'playing' && (
             <button
-              onClick={() => onToggleEliminate(suspect.id)}
+              onClick={handleToggle}
               className={cn(
                 "flex-1 py-2 rounded text-sm font-bold uppercase tracking-wider transition-all font-mono border-2 shadow-sm active:translate-y-0.5",
                 isEliminated 

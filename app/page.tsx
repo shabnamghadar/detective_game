@@ -7,6 +7,7 @@ import { pickCulprit, generateClue } from '@/lib/game-logic';
 import SuspectCard from '@/components/SuspectCard';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import confetti from 'canvas-confetti';
+import { sounds } from '@/lib/sounds';
 import { Search, RotateCcw, Award, AlertTriangle, Volume2, Printer } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -25,6 +26,7 @@ export default function Home() {
 
   useEffect(() => {
     if (gameStatus === 'won') {
+      sounds?.playWin();
       confetti({
         particleCount: 200,
         spread: 100,
@@ -74,6 +76,7 @@ export default function Home() {
 
     if (!culprit) return;
 
+    sounds?.playScan();
     const newClue = generateClue(culprit, clues);
     
     setClues(prev => [...prev, newClue]);
