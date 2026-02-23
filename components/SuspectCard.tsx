@@ -29,7 +29,7 @@ export default function SuspectCard({ suspect, isEliminated, isGuilty, gameStatu
       {/* Main Folder Card */}
       <div 
         className={cn(
-          "relative z-10 h-full rounded-b-xl rounded-tr-xl border-2 p-5 shadow-md transition-all duration-300 transform perspective-1000 bg-[#f8f5e6] border-[#d1ccb6] flex flex-col gap-3",
+          "relative z-10 h-full rounded-b-xl rounded-tr-xl border-2 p-5 shadow-md transition-all duration-300 transform perspective-1000 bg-[#f8f5e6] border-[#d1ccb6] flex flex-col gap-3 overflow-hidden",
           !isEliminated && "hover:shadow-xl hover:-translate-y-1 hover:rotate-1",
           isEliminated ? "bg-gray-100 opacity-90 grayscale border-dashed border-gray-300" : "bg-[#f8f5e6]",
           showJail && "ring-8 ring-red-800 bg-red-50 border-red-900 grayscale-0 opacity-100 scale-100"
