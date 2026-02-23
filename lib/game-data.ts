@@ -19,15 +19,15 @@ export const SUSPECTS: Suspect[] = [
     power: 'Super Drawing',
     isFictional: false,
     traits: ['Shiny', 'Dark', 'Soft'],
-    description: 'A quiet artist who is often covered in graphite and paint.',
+    description: 'A solitary artist often found sketching in the shadows of the old clock tower. Her eyes are dark and observant, always carrying a silver brush as a hair stick.',
     motive: "Needs the yarn's specific texture for a mixed-media masterpiece.",
     color: 'bg-pink-400',
-    avatar: '🎨',
+    avatar: '/suspects/sena.png',
     evidence: [
-      "Graphite dust was found... Something Dark? 🌑", 
-      "A silver brush bristle was left behind... Something Shiny? ✨"
+      "Graphite dust was found in the shadows... Something Dark? 🌑", 
+      "A silver brush bristle glinting in the moonlight... Something Shiny? ✨"
     ],
-    alibi: "Sena was seen sketching by the fountain with wet paint on her hands. 🎨",
+    alibi: "Sena was seen sketching by the fountain, her hands stained with midnight blue paint. 🎨",
   },
   {
     id: 'anlin',
@@ -35,15 +35,15 @@ export const SUSPECTS: Suspect[] = [
     power: 'Tiny Stealth',
     isFictional: false,
     traits: ['Dark', 'Soft', 'Sharp'],
-    description: 'A tiny, stealthy observer who collects soft things.',
+    description: 'Small and swift, she moves silently through the forgotten corridors. Wears a deep emerald cloak and collects soft velvet scraps for her hidden nest.',
     motive: "Building the ultimate winter nest and needs soft insulation.",
     color: 'bg-yellow-400',
-    avatar: '🐭',
+    avatar: '/suspects/anlin.png',
     evidence: [
-      "A tiny claw mark was found on the table... Something Sharp? 🗡️", 
-      "A dark shadow was seen darting away... Something Dark? 🌑"
+      "A tiny, sharp claw mark was found... Something Sharp? 🗡️", 
+      "A dark shadow was seen darting away into the night... Something Dark? 🌑"
     ],
-    alibi: "Anlin was stuck in an empty jam jar in the pantry! 🍓",
+    alibi: "Anlin was discovered trapped in an empty jam jar in the pantry, unable to escape. 🍓",
   },
   {
     id: 'celine',
@@ -51,15 +51,15 @@ export const SUSPECTS: Suspect[] = [
     power: 'Cute Charm',
     isFictional: false,
     traits: ['Shiny', 'Soft', 'Sharp'],
-    description: 'Loves everything sparkly, cute, and slightly dangerous.',
+    description: 'Always dressed in shimmering midnight blue sequins that catch the faint light. Her laughter echoes a bit too loudly in the empty halls.',
     motive: "The lavender color perfectly matches her new sequin outfit.",
     color: 'bg-purple-400',
-    avatar: '✨',
+    avatar: '/suspects/celine.png',
     evidence: [
-      "A loose sequin was found... Something Shiny? ✨", 
-      "A scratch from a high heel? ...Something Sharp? 👠"
+      "A loose sequin was found, reflecting the candlelight... Something Shiny? ✨", 
+      "A sharp scratch from a high heel on the floorboards... Something Sharp? 👠"
     ],
-    alibi: "Celine was livestreaming a makeup tutorial to 500 followers. 📹",
+    alibi: "Celine was livestreaming a makeup tutorial to an audience of 500, visible online. 📹",
   },
   {
     id: 'alex',
@@ -67,15 +67,15 @@ export const SUSPECTS: Suspect[] = [
     power: 'Craft Tools',
     isFictional: false,
     traits: ['Shiny', 'Dark', 'Sharp'],
-    description: 'Always building, fixing, or taking things apart.',
+    description: 'A brooding inventor with grease-stained hands and sharp, calculating eyes behind thick, dark-rimmed glasses. Often heard working late into the night.',
     motive: "Needs to test the yarn's tensile strength for a pulley system.",
     color: 'bg-blue-400',
-    avatar: '🛠️',
+    avatar: '/suspects/alex.png',
     evidence: [
-      "Metal shavings were found... Something Shiny? 🔩", 
-      "A grease stain was left on the carpet... Something Dark? 🛢️"
+      "Metal shavings were found glinting in the dark... Something Shiny? 🔩", 
+      "A grease stain was left on the faded carpet... Something Dark? 🛢️"
     ],
-    alibi: "Alex was welding a metal sculpture in the garage (loudly). 💥",
+    alibi: "Alex was welding a metal sculpture in the garage, creating sparks and loud noise. 💥",
   },
   {
     id: 'melody',
@@ -83,15 +83,15 @@ export const SUSPECTS: Suspect[] = [
     power: 'Fiber Master',
     isFictional: false,
     traits: ['Shiny', 'Soft', 'Dark'],
-    description: 'Takes knitting very seriously. Maybe too seriously.',
+    description: 'Weaves intricate, dark tapestries by candlelight. Her long dark hair is always perfectly braided, and she guards her yarn with a fierce, quiet intensity.',
     motive: "Believes the yarn is being wasted on non-knitters and must be rescued.",
     color: 'bg-green-400',
-    avatar: '🧶',
+    avatar: '/suspects/melody.png',
     evidence: [
-      "Soft fuzz was left behind... Something Soft? 🧶", 
-      "A scratch from a knitting needle... Something Shiny? 🥢"
+      "Soft fuzz was left behind on a velvet chair... Something Soft? 🧶", 
+      "A scratch from a silver knitting needle... Something Shiny? 🥢"
     ],
-    alibi: "Melody was frantically detangling a massive 'yarn barf' incident. 😫",
+    alibi: "Melody was frantically detangling a massive 'yarn barf' incident by the fire. 😫",
   },
   {
     id: 'maleficent',
@@ -99,15 +99,15 @@ export const SUSPECTS: Suspect[] = [
     power: 'Dark Fairy Magic',
     isFictional: true,
     traits: ['Dark', 'Shiny', 'Sharp'],
-    description: 'The Mistress of All Evil. Has a flair for the dramatic.',
+    description: 'Possesses an aura of ancient magic. Her sharp, angular features are framed by a high collar of black feathers. A silver thorn brooch gleams ominously on her chest.',
     motive: "Needs a binding agent for a sleeping spell that is also comfortable.",
     color: 'bg-gray-800 text-white',
-    avatar: '🐉',
+    avatar: '/suspects/maleficent.png',
     evidence: [
-      "A dark crow feather was found... Something Dark? 🪶", 
-      "A sharp thorn was left behind... Something Sharp? 🌹"
+      "A dark crow feather was found drifting in the air... Something Dark? 🪶", 
+      "A sharp thorn was left behind, piercing the floor... Something Sharp? 🌹"
     ],
-    alibi: "Maleficent was stuck waiting in line at the DMV. The true horror. 🚗",
+    alibi: "Maleficent was stuck waiting in line at the DMV, a fate worse than any curse. 🚗",
   },
 ];
 
