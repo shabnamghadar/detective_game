@@ -13,50 +13,54 @@ export function pickCulprit(): Suspect {
 }
 
 export function generateClue(culprit: Suspect, existingClues: string[]): string {
-  // We want a mix of Evidence (pointing TO culprit) and Alibis (ruling OUT others).
-  
   const innocentSuspects = SUSPECTS.filter(s => s.id !== culprit.id);
   
-  // 1. Gather all possible clues
-  const possibleClues: string[] = [];
+  // 1. Gather all useful clues
+  const usefulClues: string[] = [];
 
-  // B) Alibis for innocent suspects (Rule them out!)
+  // Alibis (Strong elimination)
   innocentSuspects.forEach(innocent => {
-    if (innocent.alibi) {
-      // subtle: just state the fact, let the player deduce it clears them
-      possibleClues.push(`🔎 New Intel: ${innocent.alibi}`);
-    }
+    if (innocent.alibi) usefulClues.push(`🔎 New Intel: ${innocent.alibi}`);
   });
 
-  // A) Evidence pointing TO the culprit (Specific Clues)
-  if (culprit.evidence) {
-    possibleClues.push(...culprit.evidence);
-  }
+  // Evidence (Specific)
+  if (culprit.evidence) usefulClues.push(...culprit.evidence);
   
-  // B) Trait Clues (General Profile)
-  // "The thief has the trait: X"
+  // Traits (General)
   culprit.traits.forEach(trait => {
-    possibleClues.push(`Profile Update: The culprit is known to be ${trait}.`);
+    usefulClues.push(`Profile Update: The culprit is known to be ${trait}.`);
   });
 
-  // C) Negative Trait Clues (Ruling out traits)
-  // Find traits that the culprit does NOT have
+  // Negative Traits (Strong elimination)
   const allPossibleTraits = ['Shiny', 'Dark', 'Soft', 'Sharp'];
   const missingTraits = allPossibleTraits.filter(t => !culprit.traits.includes(t));
+  missingTraits.forEach(t => {
+      usefulClues.push(`Profile Update: The culprit is definitely NOT ${t}.`);
+  });
+
+  // Motive (Unique)
+  usefulClues.push(`Motive: The culprit needs the yarn because they ${culprit.motive.replace(/^Needs /, 'need ').replace(/^Wants /, 'want ').replace(/^Thinks /, 'think ').replace(/^Believes /, 'believe ').replace(/^Possesses /, 'possess ')}`); // Simple grammar fix logic or just verify motive strings
+
+  // 2. Filter out already found clues
+  const availableUseful = usefulClues.filter(c => !existingClues.includes(c));
+  const availableFlavor = FLAVOR_CLUES.filter(c => !existingClues.includes(c));
+
+  // 3. Smart Selection Logic
+  // If we have found few clues (< 4), FORCE a useful clue if available.
+  // We only show flavor clues if we are doing well or run out of useful ones.
   
-  if (missingTraits.length > 0) {
-      const randomMissing = missingTraits[Math.floor(Math.random() * missingTraits.length)];
-      possibleClues.push(`Profile Update: The culprit is definitely NOT ${randomMissing}.`);
+  if (availableUseful.length > 0) {
+      // 80% chance of useful clue, 20% flavor (if available)
+      if (availableFlavor.length > 0 && Math.random() > 0.8) {
+          return availableFlavor[Math.floor(Math.random() * availableFlavor.length)];
+      }
+      return availableUseful[Math.floor(Math.random() * availableUseful.length)];
+  }
+  
+  // Fallback if no useful clues left
+  if (availableFlavor.length > 0) {
+      return availableFlavor[Math.floor(Math.random() * availableFlavor.length)];
   }
 
-  // D) FLAVOR CLUES (Useless/Distraction clues)
-  possibleClues.push(...FLAVOR_CLUES);
-
-  // Filter out clues we already have
-  const newClues = possibleClues.filter(c => !existingClues.includes(c));
-  
-  if (newClues.length === 0) return "You've found all the main clues! Review your notebook to solve the case! 📓";
-  
-  // Pick a random one
-  return newClues[Math.floor(Math.random() * newClues.length)];
+  return "You've found all the clues! Solved it yet? 🕵️‍♀️";
 }

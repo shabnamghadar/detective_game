@@ -8,7 +8,7 @@ import SuspectCard from '@/components/SuspectCard';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import confetti from 'canvas-confetti';
 import { sounds } from '@/lib/sounds';
-import { Search, RotateCcw, Award, AlertTriangle, Volume2, Printer } from 'lucide-react';
+import { Search, RotateCcw, Award, AlertTriangle, Volume2, Printer, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 // Dynamically import Scanner to avoid SSR issues with html5-qrcode
@@ -19,6 +19,7 @@ export default function Home() {
   const [clues, setClues] = useState<string[]>([]);
   const [eliminatedIds, setEliminatedIds] = useState<string[]>([]);
   const [showScanner, setShowScanner] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
   const [gameStatus, setGameStatus] = useState<'playing' | 'won' | 'lost'>('playing');
   const [scannedCodes, setScannedCodes] = useState<Set<string>>(new Set());
   const [lastScannedCode, setLastScannedCode] = useState<string | null>(null);
@@ -56,6 +57,7 @@ export default function Home() {
     setClues([]);
     setEliminatedIds([]);
     setGameStatus('playing');
+    setShowVideo(false);
     setScannedCodes(new Set());
     setLastScannedCode(null);
     console.log("Secret Culprit:", newCulprit.name); // For debugging
@@ -95,6 +97,7 @@ export default function Home() {
     if (!culprit) return;
     if (id === culprit.id) {
       setGameStatus('won');
+      setShowVideo(true);
     } else {
       setGameStatus('lost');
     }
@@ -229,6 +232,44 @@ export default function Home() {
           onScan={handleScan}
           onClose={() => setShowScanner(false)}
         />
+      )}
+
+      {/* Video Overlay for Busted Culprit */}
+      {showVideo && culprit && (
+        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/95 p-4 animate-in fade-in duration-500 backdrop-blur-md">
+          <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-800 flex flex-col items-center justify-center">
+            
+            {/* Header */}
+            <div className="w-full flex justify-between items-center p-4 bg-gray-900 border-b border-gray-800 absolute top-0 left-0 right-0 z-10 shadow-md">
+              <h2 className="text-2xl font-bold flex items-center gap-2 text-white uppercase tracking-widest font-[family-name:var(--font-permanent-marker)] text-red-500">
+                <Award className="w-8 h-8 text-red-500" /> 
+                {culprit.name} BUSTED!
+              </h2>
+              <button 
+                onClick={() => setShowVideo(false)}
+                className="p-2 hover:bg-gray-800 rounded-full transition-colors bg-gray-800"
+              >
+                <X className="w-6 h-6 text-gray-300" />
+              </button>
+            </div>
+            
+            {/* Video Player */}
+            <div className="w-full relative pt-[72px] pb-4 px-4 flex items-center justify-center min-h-[50vh] bg-black">
+              <video 
+                src={`/suspects/${culprit.id}.mp4`}
+                autoPlay 
+                playsInline
+                controls
+                className="w-full h-auto max-h-[75vh] object-contain rounded-xl shadow-2xl"
+                onError={(e) => {
+                  console.error("Video not found for", culprit.id);
+                  // Hide video modal automatically if the file does not exist
+                  setShowVideo(false);
+                }}
+              />
+            </div>
+          </div>
+        </div>
       )}
     </main>
   );
