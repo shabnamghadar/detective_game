@@ -1,0 +1,74 @@
+DETECTIVE GAME: ALL POSSIBLE CLUES
+=================================
+
+--- SPECIFIC EVIDENCE (Points TO specific suspects) ---
+
+SENA:
+- "Graphite dust was found in the shadows... Something Dark? 🌑"
+- "A silver brush bristle glinting in the moonlight... Something Shiny? ✨"
+
+ANLIN:
+- "A tiny, sharp claw mark was found... Something Sharp? 🗡️"
+- "A dark shadow was seen darting away into the night... Something Dark? 🌑"
+
+CELINE:
+- "A loose sequin was found, reflecting the candlelight... Something Shiny? ✨"
+- "A sharp scratch from a high heel on the floorboards... Something Sharp? 👠"
+
+ALEX:
+- "Metal shavings were found glinting in the dark... Something Shiny? 🔩"
+- "A grease stain was left on the faded carpet... Something Dark? 🛢️"
+
+MELODY:
+- "Soft fuzz was left behind on a velvet chair... Something Soft? 🧶"
+- "A scratch from a silver knitting needle... Something Shiny? 🥢"
+
+MALEFICENT:
+- "A dark crow feather was found drifting in the air... Something Dark? 🪶"
+- "A sharp thorn was left behind, piercing the floor... Something Sharp? 🌹"
+
+
+--- TRAIT PROFILES (General Evidence) ---
+
+- "Profile Update: The culprit is known to be Shiny."
+- "Profile Update: The culprit is known to be Dark."
+- "Profile Update: The culprit is known to be Soft."
+- "Profile Update: The culprit is known to be Sharp."
+- "Profile Update: The culprit is definitely NOT Shiny."
+- "Profile Update: The culprit is definitely NOT Dark."
+- "Profile Update: The culprit is definitely NOT Soft."
+- "Profile Update: The culprit is definitely NOT Sharp."
+
+
+--- MOTIVES (Unique to each suspect) ---
+
+- SENA: "Motive: The culprit needs the yarn's specific texture for a mixed-media masterpiece."
+- ANLIN: "Motive: The culprit wants to build the ultimate winter nest and needs soft insulation."
+- CELINE: "Motive: The culprit thinks the lavender color perfectly matches her new sequin outfit."
+- ALEX: "Motive: The culprit needs to test the yarn's tensile strength for a pulley system."
+- MELODY: "Motive: The culprit believes the yarn is being wasted on non-knitters and must be rescued."
+- MALEFICENT: "Motive: The culprit needs a binding agent for a sleeping spell that is also comfortable."
+
+
+--- ALIBIS (Proves someone is innocent) ---
+
+- SENA: "🔎 New Intel: Sena was seen sketching by the fountain, her hands stained with midnight blue paint. 🎨"
+- ANLIN: "🔎 New Intel: Anlin was discovered trapped in an empty jam jar in the pantry, unable to escape. 🍓"
+- CELINE: "🔎 New Intel: Celine was livestreaming a makeup tutorial to an audience of 500, visible online. 📹"
+- ALEX: "🔎 New Intel: Alex was welding a metal sculpture in the garage, creating sparks and loud noise. 💥"
+- MELODY: "🔎 New Intel: Melody was frantically detangling a massive 'yarn barf' incident by the fire. 😫"
+- MALEFICENT: "🔎 New Intel: Maleficent was stuck waiting in line at the DMV, a fate worse than any curse. 🚗"
+
+
+--- RED HERRINGS (Flavor Clues - No suspect match) ---
+
+- "A faint smell of burnt toast lingers near the window."
+- "There is a scuff mark on the floor, about the size of a moving box."
+- "You found a single, ordinary paperclip."
+- "A receipt for dry cleaning is crumpled in the corner."
+- "The clock on the wall seems to be exactly three minutes fast."
+- "A half-eaten sandwich was left on a plate nearby."
+- "You noticed a small puddle of water near the umbrella stand."
+- "There is a faint hum coming from the air conditioning vent."
+- "A loose button from a winter coat is resting on the rug."
+- "Someone left a grocery list scribbled on a napkin."

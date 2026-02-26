@@ -112,17 +112,23 @@ export const SUSPECTS: Suspect[] = [
 ];
 
 export const FLAVOR_CLUES = [
-  "You found a footprint! ...Wait, that's just your own footprint. 👣",
-  "The scanner picked up a signal... but it was just the microwave. 📡",
-  "You found a piece of yarn! Oh, never mind, it's just a loose thread from the carpet. 🧵",
-  "A witness saw something! ...It was just the neighbor's cat. 🐈",
-  "You found a crumb. It looks like... a regular cracker crumb. Not helpful. 🍪",
-  "The trail seems to have gone cold here. Try scanning another code! ❄️",
-  "You found a shiny object! ...It's just a gum wrapper. 🍬",
-  "This QR code was a decoy! The thief is tricky. 🎭",
-  "You scanned a clue... but the ink is smudged and unreadable. 💧",
-  "Nothing to see here. Just a dust bunny. 🐰"
+  "A faint smell of burnt toast lingers near the window.",
+  "There is a scuff mark on the floor, about the size of a moving box.",
+  "You found a single, ordinary paperclip.",
+  "A receipt for dry cleaning is crumpled in the corner.",
+  "The clock on the wall seems to be exactly three minutes fast.",
+  "A half-eaten sandwich was left on a plate nearby.",
+  "You noticed a small puddle of water near the umbrella stand.",
+  "There is a faint hum coming from the air conditioning vent.",
+  "A loose button from a winter coat is resting on the rug.",
+  "Someone left a grocery list scribbled on a napkin."
 ];
 
 export const GAME_TITLE = "The Case of the Stolen Lavender Chunky Yarn";
-export const GAME_INTRO = "Detective! We have a crisis! The ultra-rare, super-soft Lavender Chunky Yarn has been stolen from the craft room! It was last seen sitting on the table, ready for a scarf. Now, it's gone! We have six suspects. Sena, Anlin, Celine, Alex, Melody, and even Maleficent were seen nearby. Scan the clues found at the scene to eliminate the innocent and catch the yarn thief! Good luck, Detective!";
+export const GAME_INTROS = [
+  "Detective! A crisis in the craft room! The ultra-rare, super-soft Lavender Chunky Yarn has vanished right off the table. Six suspects were seen nearby. Can you find the thief?",
+  "The knitting needles are quiet tonight... too quiet. Someone has made off with the prize Lavender Chunky Yarn! The clues are scattered, and the clock is ticking.",
+  "Disaster! The centerpiece of the upcoming art show—the Lavender Chunky Yarn—is missing! Traces of evidence were left behind by a very tricky culprit. Solve it, Detective!",
+  "A shadow was seen darting from the workshop with a bundle of soft purple yarn. The Lavender Chunky Yarn is gone, and only your sharp eye can bring it back to justice.",
+  "Someone has a purple-colored secret! The Lavender Chunky Yarn was stolen just before the final stitch. Scan the scene and eliminate the suspects one by one!"
+];
